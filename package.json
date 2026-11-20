@@ -1,0 +1,129 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "ddg-image-search",
+  "title": "DuckDuckGo Image Search",
+  "description": "Search DuckDuckGo images, browse them in a grid and copy the one you pick to the clipboard as PNG.",
+  "icon": "icon.png",
+  "author": "local",
+  "categories": [
+    "Design Tools",
+    "Productivity"
+  ],
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "search-images",
+      "title": "Search Images",
+      "subtitle": "DuckDuckGo",
+      "description": "Search DuckDuckGo images and copy the selected one as PNG.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "region",
+      "title": "Region",
+      "description": "DuckDuckGo region code, e.g. wt-wt (worldwide), us-en, de-de.",
+      "type": "textfield",
+      "required": false,
+      "default": "wt-wt"
+    },
+    {
+      "name": "safesearch",
+      "title": "SafeSearch",
+      "type": "dropdown",
+      "required": false,
+      "default": "moderate",
+      "data": [
+        {
+          "title": "Moderate",
+          "value": "moderate"
+        },
+        {
+          "title": "Strict",
+          "value": "on"
+        },
+        {
+          "title": "Off",
+          "value": "off"
+        }
+      ]
+    },
+    {
+      "name": "maxResults",
+      "title": "Max Results",
+      "type": "dropdown",
+      "required": false,
+      "default": "60",
+      "data": [
+        {
+          "title": "30",
+          "value": "30"
+        },
+        {
+          "title": "60",
+          "value": "60"
+        },
+        {
+          "title": "100",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "name": "columns",
+      "title": "Grid Columns",
+      "type": "dropdown",
+      "required": false,
+      "default": "5",
+      "data": [
+        {
+          "title": "4",
+          "value": "4"
+        },
+        {
+          "title": "5",
+          "value": "5"
+        },
+        {
+          "title": "6",
+          "value": "6"
+        },
+        {
+          "title": "8",
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "name": "closeAfterCopy",
+      "title": "After Copying",
+      "label": "Close Raycast after copying",
+      "description": "Uncheck to keep the grid open so you can grab several images in a row.",
+      "type": "checkbox",
+      "required": false,
+      "default": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.13.1",
+    "@raycast/utils": "^2.3.3"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix"
+  }
+}
